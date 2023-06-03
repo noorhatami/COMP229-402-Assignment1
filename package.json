@@ -1,6 +1,7 @@
 {
   "name": "assignment-1",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  
   "private": true,
   "scripts": {
     "start": "node server"
@@ -16,5 +17,18 @@
     "jquery": "^3.7.0",
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
-  }
+  },
+  "description": "Assignment 1",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noorhatami/COMP229-402-Assignment1.git"
+  },
+  "author": "Noor Hatami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noorhatami/COMP229-402-Assignment1/issues"
+  },
+  "homepage": "https://github.com/noorhatami/COMP229-402-Assignment1#readme"
 }

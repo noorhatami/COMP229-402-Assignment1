@@ -1,14 +1,19 @@
+
+//COMP229-402-Assignment1
+//Noorahmad Hatami
+//300847575
+//06-03-2023
 var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express'});
+  res.render('index', { title: 'Home'});
 });
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Express'});
+  res.render('index', { title: 'Home'});
 });
 
 /* GET About page. */
@@ -25,7 +30,7 @@ router.get('/services', function(req, res, next) {
 });
 /* GET hcontact page. */
 router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact Me' });
+  res.render('contact', { title: 'Contact Me' });
 });
 
 module.exports = router;
