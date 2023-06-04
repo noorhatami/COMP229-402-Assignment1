@@ -1,1 +1,16 @@
+body{
+    background-color: white;
+}
+
+
+.about-img{
+    margin-top: 50px;
+    margin-left: 20px;
+    height: 600px;
+    width: 500px;
+}
+.card-textt{
+    padding-left: 300px;
+    padding-right: 300px;
+}
 

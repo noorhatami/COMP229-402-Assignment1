@@ -4,7 +4,78 @@
 <%- include partials/main_nav.ejs %>
 
 
-<h1>Hi Noor</h1>
+<div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="Assets/images/Logo.JPG" alt="" width="72" height="72">
+      <h2>Contact Me</h2>
+      
+    </div>
+
+   
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Contact Information</h4>
+        <form class="needs-validation" novalidate method="get">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">First name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+               
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Last name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="username">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" class="form-control" id="username" placeholder="Username" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            <div class="invalid-feedback">
+             
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="number">Phone Number</label>
+            <input type="text" class="form-control" id="address"  required>
+            <div class="invalid-feedback">
+              
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message">Message <span class="text-muted">(Optional)</span></label>
+            <input type="textbox" class="form-control" id="message" placeholder="Place message here">
+          </div>
+
+          
+         
+          
+          <button class="btn btn-primary btn-lg btn-block btn-light mb-6 " type="submit"> <a href="/home">Submit Information</a></button>
+        </form>
+      </div>
+    </div>
+
+   
+  </div>
 
   
   
