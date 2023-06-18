@@ -10,7 +10,10 @@ module.exports.displayContactList=async(req,res,next)=>{
         let contactList=await Contacts.find();
         //console.log(contactList)
 
-        res.render('contacts/list',{title: 'Business Contacts', ContactList: contactList})
+        res.render('contacts/list',{
+            title: 'Business Contacts', 
+            ContactList: contactList,
+            displayName: req.user ? req.user.displayName : ''})
     } catch(err){
         console.error(err);
     }
@@ -20,7 +23,8 @@ module.exports.displayAddPage=async(req,res,next)=>{
     try{
         
 
-        res.render('contacts/add',{title: 'Add Business Contacts'})
+        res.render('contacts/add',{title: 'Add Business Contacts', 
+        displayName: req.user ? req.user.displayName : ''})
     } catch(err){
         console.error(err);
     }
@@ -47,7 +51,9 @@ module.exports.displayEditPage=async(req,res,next)=>{
 
     try{
         let contactToEdit = await Contacts.findById(id);
-        res.render('contacts/edit', {title: 'Edit Contacts', contact: contactToEdit })
+        res.render('contacts/edit', {title: 'Edit Contacts', 
+        contact: contactToEdit , 
+        displayName: req.user ? req.user.displayName : '' })
     }catch(err)
     {
         console.log(err);

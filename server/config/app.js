@@ -4,6 +4,13 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+//modules for authentication
+let session=require('express-session')
+let passport=require('passport')
+let passportLocal=require('passport-local')
+let localStrategy=passportLocal.Strategy;
+let flash=require('connect-flash');
+
 //Database setup
 let mongoose=require('mongoose');
 
@@ -12,6 +19,7 @@ let DB=require('./db');
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let contactsRouter=require('../routes/contacts');
+const { Session } = require('inspector');
 
 
 //point mongoose to the DB URI
@@ -35,6 +43,33 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname,'../../node_modules')));
+
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+//initialize flash
+app.use(flash());
+
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport user configuration
+//create a User Model Instance
+let userModel = require('../modules/user');
+let User= userModel.User;
+
+// implementation User Authentication Strategy
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/business-contacts', contactsRouter);
